@@ -1,7 +1,10 @@
 # Juanita Michelle Boutique preview
 
-Static preview of the boutique homepage with the interactive navbar, style quiz and reservation dialog.
+Homepage with editable product previews, interactive navbar, style quiz and reservation dialog.
 
-Shop links open the real GHL catalog. Navbar homepage links stay inside this preview. Reservation automation is not connected.
+Shop links open https://juanitamichelleboutique.com/products-list. Preview section links stay within GitHub Pages.
 
-`navbar-code.txt` is the production GHL navbar block, with links to the real homepage.
+- homepage-code.txt: complete production GHL homepage. Replace the previous entire homepage Custom Code block; the navbar is included.
+- navbar-code.txt: standalone production navbar for the GHL store pages.
+
+Reservation automation is not connected in the interactive navbar.

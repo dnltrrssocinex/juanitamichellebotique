@@ -7,8 +7,8 @@ Never put a private API key into this public code.
 If using GHL native sections, update the selectors below to their actual section IDs.
 -->
 <script type="application/json" id="jm-navbar-settings">{
-  "homeUrl": "https://shop.juanitamichelleboutique.com/homepage",
-  "shopUrl": "https://shop.juanitamichelleboutique.com/products-list",
+  "homeUrl": "https://juanitamichelleboutique.com/homepage",
+  "shopUrl": "https://juanitamichelleboutique.com/products-list",
   "reservationEndpoint": "",
   "sections": {
     "experiences": "#experiences",
@@ -99,7 +99,7 @@ body:has(#jm-nav-widget) #jm-site-root header,body:has(#jm-nav-widget) #jm-site-
 <div id="jm-nav-widget">
   <header class="jmn-header">
     <div class="jmn-top">
-      <a class="jmn-brand" data-home href="https://shop.juanitamichelleboutique.com/homepage" aria-label="Juanita Michelle Boutique homepage">
+      <a class="jmn-brand" data-home href="https://juanitamichelleboutique.com/homepage" aria-label="Juanita Michelle Boutique homepage">
         <span>Juanita Michelle's</span><small>BOUTIQUE</small>
       </a>
       <p class="jmn-tagline"><em>Where Confidence Meets Style &amp; Elegance.</em><br><strong>And It Looks Good on You.</strong></p>
@@ -110,12 +110,12 @@ body:has(#jm-nav-widget) #jm-site-root header,body:has(#jm-nav-widget) #jm-site-
       <button type="button" class="jmn-menu" aria-label="Open navigation menu" aria-expanded="false" aria-controls="jm-navigation">☰</button>
     </div>
     <nav id="jm-navigation" aria-label="Boutique navigation">
-      <a data-home href="https://shop.juanitamichelleboutique.com/homepage">Home</a>
-      <a data-shop href="https://shop.juanitamichelleboutique.com/products-list">Shop</a>
-      <a data-section="experiences" href="https://shop.juanitamichelleboutique.com/homepage#experiences">Experiences</a>
-      <a data-section="about" href="https://shop.juanitamichelleboutique.com/homepage#about">About</a>
-      <a data-section="visit" href="https://shop.juanitamichelleboutique.com/homepage#visit">Visit</a>
-      <a data-section="contact" href="https://shop.juanitamichelleboutique.com/homepage#contact">Contact</a>
+      <a data-home href="https://juanitamichelleboutique.com/homepage">Home</a>
+      <a data-shop href="https://juanitamichelleboutique.com/products-list">Shop</a>
+      <a data-section="experiences" href="https://juanitamichelleboutique.com/homepage#experiences">Experiences</a>
+      <a data-section="about" href="https://juanitamichelleboutique.com/homepage#about">About</a>
+      <a data-section="visit" href="https://juanitamichelleboutique.com/homepage#visit">Visit</a>
+      <a data-section="contact" href="https://juanitamichelleboutique.com/homepage#contact">Contact</a>
     </nav>
   </header>
   <dialog id="jm-style-dialog" class="jmn-dialog" aria-labelledby="jm-style-title" aria-describedby="jm-style-description">
@@ -177,7 +177,7 @@ body:has(#jm-nav-widget) #jm-site-root header,body:has(#jm-nav-widget) #jm-site-
   const config = JSON.parse(document.getElementById('jm-navbar-settings').textContent);
   const home = new URL(config.homeUrl);
   const path = value => value.replace(/\/+$/, '') || '/';
-  const onHomepage = () => location.origin === home.origin && path(location.pathname) === path(home.pathname);
+  const onHomepage = () => location.origin === home.origin && (path(location.pathname) === path(home.pathname) || (path(home.pathname) === '/homepage' && path(location.pathname) === '/'));
   const localPreview = () => ['localhost','127.0.0.1'].includes(location.hostname);
   const header = root.querySelector('.jmn-header');
   const spacer = document.getElementById('jm-nav-space');

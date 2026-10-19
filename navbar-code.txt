@@ -1,4 +1,5 @@
 <!-- JUANITA MICHELLE: NAVBAR + STYLE QUIZ + RESERVATION FORM ONLY.
+Domain update: 2026-10-20. Home and section links use juanitamichelleboutique.com.
 Replace the previous standalone navbar block with ALL of this code.
 Install the same navbar on the homepage and shop page for section navigation.
 Set reservationEndpoint only after connecting and testing your GHL automation.

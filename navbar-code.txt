@@ -1,4 +1,4 @@
-<!-- JUANITA MICHELLE: NAVBAR + STYLE QUIZ + RESERVATION FORM ONLY.
+<!-- JUANITA MICHELLE: NAVBAR + EXPERIENCE RESERVATION FORM ONLY.
 Domain update: 2026-10-20. Home and section links use juanitamichelleboutique.com.
 Cart fix: 2026-10-20. Native cart drawer covers the navbar. Navbar scrolls with the full cart page.
 Replace the previous standalone navbar block with ALL of this code.
@@ -96,7 +96,7 @@ body:has(.c-store-cart) #jm-nav-widget .jmn-header{position:absolute}
 #jm-nav-widget .jmn-success>p{margin-bottom:24px}
 :is(.c-section,.c-row,.c-column,.c-custom-code):has(#jm-nav-space),:is(.c-section,.c-row,.c-column,.c-custom-code):has(#jm-nav-space)>.inner{padding-top:0!important;padding-bottom:0!important;margin-top:0!important;margin-bottom:0!important}
 @media(max-width:1100px){#jm-nav-widget .jmn-tagline{display:none}}
-@media(max-width:767px){#jm-nav-widget .jmn-top{display:grid;grid-template-columns:1fr auto;gap:14px;padding:14px 20px}#jm-nav-widget .jmn-brand>span{font-size:29px}#jm-nav-widget .jmn-menu{display:block;grid-column:2;grid-row:1}#jm-nav-widget .jmn-actions{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}#jm-nav-widget #jm-navigation{display:none}#jm-nav-widget #jm-navigation.is-open{display:flex;flex-wrap:wrap;gap:8px 20px;padding:8px 16px}#jm-nav-widget #jm-navigation a{padding:9px 0}#jm-nav-widget .jmn-button{padding:11px 12px}#jm-nav-widget .jmn-dialog-header{padding:22px 42px 22px 20px}#jm-nav-widget .jmn-dialog-body{padding:24px 20px}}
+@media(max-width:767px){#jm-nav-widget .jmn-top{display:grid;grid-template-columns:1fr auto;gap:14px;padding:14px 20px}#jm-nav-widget .jmn-brand>span{font-size:29px}#jm-nav-widget .jmn-menu{display:block;grid-column:2;grid-row:1}#jm-nav-widget .jmn-actions{grid-column:1/-1;display:grid;grid-template-columns:1fr}#jm-nav-widget #jm-navigation{display:none}#jm-nav-widget #jm-navigation.is-open{display:flex;flex-wrap:wrap;gap:8px 20px;padding:8px 16px}#jm-nav-widget #jm-navigation a{padding:9px 0}#jm-nav-widget .jmn-button{padding:11px 12px}#jm-nav-widget .jmn-dialog-header{padding:22px 42px 22px 20px}#jm-nav-widget .jmn-dialog-body{padding:24px 20px}}
 @media(max-width:480px){#jm-nav-widget .jmn-option{flex-wrap:wrap;gap:8px;padding:13px}#jm-nav-widget .jmn-option .jmn-option-label{flex:1}#jm-nav-widget .jmn-option .jmn-tag{font-size:9px}#jm-nav-widget .jmn-recommendations ul{grid-template-columns:1fr}#jm-nav-widget .jmn-result-actions{flex-direction:column}#jm-nav-widget #jm-reservation-form{grid-template-columns:1fr}#jm-nav-widget .jmn-dialog h2{font-size:24px}}
 @media(prefers-reduced-motion:reduce){#jm-nav-widget *{scroll-behavior:auto!important;transition:none!important}}
 </style>
@@ -109,8 +109,7 @@ body:has(.c-store-cart) #jm-nav-widget .jmn-header{position:absolute}
       </a>
       <p class="jmn-tagline"><em>Where Confidence Meets Style &amp; Elegance.</em><br><strong>And It Looks Good on You.</strong></p>
       <div class="jmn-actions">
-        <button type="button" class="jmn-button jmn-rose" data-open="quiz"><span aria-hidden="true">✧</span> Style Quiz</button>
-        <button type="button" class="jmn-button jmn-gold" data-open="booking"><span aria-hidden="true">▣</span> Book Experience</button>
+        <button type="button" class="jmn-button jmn-gold" data-open="booking"><span aria-hidden="true">▣</span> Book Your Experience</button>
       </div>
       <button type="button" class="jmn-menu" aria-label="Open navigation menu" aria-expanded="false" aria-controls="jm-navigation">☰</button>
     </div>
@@ -123,15 +122,6 @@ body:has(.c-store-cart) #jm-nav-widget .jmn-header{position:absolute}
       <a data-section="contact" href="https://juanitamichelleboutique.com/homepage#contact">Contact</a>
     </nav>
   </header>
-  <dialog id="jm-style-dialog" class="jmn-dialog" aria-labelledby="jm-style-title" aria-describedby="jm-style-description">
-    <div class="jmn-dialog-header">
-      <button type="button" class="jmn-close" data-close aria-label="Close style quiz">×</button>
-      <p class="jmn-eyebrow">✧ Interactive Styling Tool</p>
-      <h2 id="jm-style-title">Discover Your Signature Accent Match</h2>
-      <p id="jm-style-description">Answer 3 quick questions so Juanita can recommend your ideal finishing touches.</p>
-    </div>
-    <div class="jmn-dialog-body" id="jm-quiz-content"></div>
-  </dialog>
   <dialog id="jm-booking-dialog" class="jmn-dialog jmn-booking" aria-labelledby="jm-booking-title" aria-describedby="jm-booking-description">
     <div class="jmn-dialog-header">
       <button type="button" class="jmn-close" data-close aria-label="Close reservation form">×</button>
@@ -157,9 +147,7 @@ body:has(.c-store-cart) #jm-nav-widget .jmn-header{position:absolute}
         <label class="jmn-field">Last Name *<input name="last_name" autocomplete="family-name" required maxlength="100" placeholder="Michelle"></label>
         <label class="jmn-field">Email Address *<input name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com"></label>
         <label class="jmn-field">Phone Number *<input name="phone" type="tel" autocomplete="tel" required minlength="7" maxlength="40" placeholder="(215) 555-0199"></label>
-        <label class="jmn-field">Favorite Color Palette<input name="favorite_color" maxlength="200" placeholder="e.g. Burgundy & Gold"></label>
-        <label class="jmn-field">Preferred Style Accent<input name="preferred_accent" maxlength="200" placeholder="e.g. Custom Hat, Chunky Gold"></label>
-        <label class="jmn-field jmn-full">Tell Juanita what you're dressing for:
+        <label class="jmn-field jmn-full">Message for Juanita
           <textarea name="notes" rows="3" maxlength="3000" placeholder="Tell us about your occasion and the finishing touches you have in mind."></textarea>
         </label>
         <p class="jmn-form-status jmn-full" id="jm-form-status" role="status" aria-live="polite" hidden></p>
@@ -188,13 +176,11 @@ body:has(.c-store-cart) #jm-nav-widget .jmn-header{position:absolute}
   const spacer = document.getElementById('jm-nav-space');
   const nav = root.querySelector('#jm-navigation');
   const menu = root.querySelector('.jmn-menu');
-  const quiz = root.querySelector('#jm-style-dialog');
   const booking = root.querySelector('#jm-booking-dialog');
-  const content = root.querySelector('#jm-quiz-content');
   const form = root.querySelector('#jm-reservation-form');
   const status = root.querySelector('#jm-form-status');
   const success = root.querySelector('#jm-booking-success');
-  let step = 0, answers = [], quizResult = null, sending = false;
+  let sending = false;
   let previousOverflow = '';
   // Escape GHL ancestors that apply transforms or clipping to Custom Code elements.
   document.body.appendChild(root);
@@ -290,10 +276,10 @@ body:has(.c-store-cart) #jm-nav-widget .jmn-header{position:absolute}
 
   function openDialog(dialog) {
     closeMenu();
-    if (!quiz.open && !booking.open) { previousOverflow = document.body.style.overflow; document.body.style.overflow = 'hidden'; }
+    if (!booking.open) { previousOverflow = document.body.style.overflow; document.body.style.overflow = 'hidden'; }
     dialog.showModal();
   }
-  [quiz, booking].forEach(dialog => {
+  [booking].forEach(dialog => {
     dialog.querySelectorAll('[data-close]').forEach(button => button.addEventListener('click', () => dialog.close()));
     dialog.addEventListener('click', event => {
       if (event.target !== dialog) return;
@@ -301,68 +287,29 @@ body:has(.c-store-cart) #jm-nav-widget .jmn-header{position:absolute}
       if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) dialog.close();
     });
     dialog.addEventListener('close', () => {
-      if (!quiz.open && !booking.open) document.body.style.overflow = previousOverflow;
+      if (!booking.open) document.body.style.overflow = previousOverflow;
     });
   });
-  function openBooking(fromQuiz) {
+  function openBooking() {
     if (!sending) {
       form.hidden = false; success.hidden = true; status.hidden = true;
-      form.elements.experience_type.value = fromQuiz ? quizResult.service : 'Sip & Shop Experience';
-      if (fromQuiz) {
-        form.elements.favorite_color.value = answers[0];
-        form.elements.preferred_accent.value = answers[1];
-      }
+      form.elements.experience_type.value = 'Sip & Shop Experience';
     }
     openDialog(booking);
   }
-  root.querySelectorAll('[data-open]').forEach(button => button.addEventListener('click', () => {
-    if (button.dataset.open === 'quiz') { renderQuiz(); openDialog(quiz); }
-    else openBooking(false);
-  }));
-  const questions = [
-    {text:'What color family usually makes you feel most like yourself?', options:[
-      ['Deep Burgundy & Rich Wine','#4c1927','Glamour & Warmth'],['Champagne Gold & Warm Neutrals','#d4af37','Elegance & Polish'],
-      ['Bold Jewel Tones (Emerald, Sapphire)','#1b4332','Vibrant Statement'],['Classic Black & Monochromatic','#1a1a1a','Chic Edge']]},
-    {text:"When completing an outfit, what's usually missing?",options:[
-      ['The statement hat or brim to crown the look'],['Distinctive earrings, necklace, or cuff jewelry'],
-      ['A unique handbag or custom finishing accessory'],['A signature personal fragrance that lingers']]},
-    {text:'How do you prefer to shop for key pieces?',options:[
-      ['In an intimate, fun Sip & Shop atmosphere with friends'],['One-on-one with Juanita guiding every step'],
-      ['Hands-on crafting my own custom accessories'],['Quick personalized recommendations delivered or prepped']]}
-  ];
-  const personalities = [
-    {title:'The Crown Accent Specialist',service:'Custom Hat Bar Workshop',description:'You have effortless poise! Your look gains maximum impact when crowned with a custom fedora or brim tailored with luxury ribbons, feathers, and gold hardware.',items:['Custom Distressed Fedora','Layered Statement Necklaces','Signature Leather Handbag']},
-    {title:'The Statement Jewelry Muse',service:'Jewelry Accent Styling',description:'You bring a look to life through distinctive details. Sculptural earrings, layered necklaces, and polished cuffs give your personal style a confident finishing touch.',items:['Statement Earrings','Layered Necklaces','Sculptural Gold Cuffs']},
-    {title:'The Curated Accessory Connoisseur',service:'Curated Accessory Consultation',description:'You appreciate an accessory that tells a story. A beautifully structured handbag and thoughtfully chosen accents make your everyday look feel distinctly yours.',items:['Signature Leather Handbag','Statement Accent Scarf','Distinctive Clutch']},
-    {title:'Sensory Signature Elegance',service:'Perfume Blend Studio',description:'Your style is subtle yet unforgettable. A personal fragrance and thoughtfully layered finishing touches leave a lasting impression.',items:['Bespoke Perfume Blend','Chunky Gold Cuffs','Velvet Accent Clutch']}
-  ];
-  const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  function renderQuiz(focus = false) {
-    if (step < 3) {
-      const q = questions[step];
-      content.innerHTML = `<div class="jmn-progress"><span>Question ${step+1} of 3</span><span class="jmn-dots" aria-hidden="true">${questions.map((_,i)=>`<i class="${i===step?'active':''}"></i>`).join('')}</span></div>
-        <h3 class="jmn-question" tabindex="-1">${escape(q.text)}</h3><div class="jmn-options">${q.options.map((opt,i)=>
-          `<button type="button" class="jmn-option" data-answer="${i}" aria-pressed="${answers[step]===opt[0]}">${opt[1]?`<span class="jmn-swatch" style="background:${opt[1]}" aria-hidden="true"></span>`:''}<span class="jmn-option-label">${escape(opt[0])}</span>${opt[2]?`<span class="jmn-tag">${escape(opt[2])}</span>`:''}</button>`).join('')}</div>${step>0?'<button type="button" class="jmn-back">← Previous question</button>':''}`;
-      content.querySelectorAll('[data-answer]').forEach(button => button.addEventListener('click', () => {
-        answers[step] = q.options[Number(button.dataset.answer)][0]; step++; renderQuiz(true);
-      }));
-      content.querySelector('.jmn-back')?.addEventListener('click', () => { step--; renderQuiz(true); });
-    } else {
-      const index = questions[1].options.findIndex(opt => opt[0] === answers[1]);
-      quizResult = personalities[index] || personalities[0];
-      content.innerHTML = `<div class="jmn-result"><span class="jmn-result-label">Your Style Personality</span><h3 tabindex="-1">${escape(quizResult.title)}</h3><p>${escape(quizResult.description)}</p>
-        <div class="jmn-recommendations"><div class="jmn-recommendations-title"><span>✧ RECOMMENDED FINISHING ACCENTS:</span><span class="jmn-tag">${escape(answers[0])}</span></div><ul>${quizResult.items.map(item=>`<li>${escape(item)}</li>`).join('')}</ul></div>
-        <div class="jmn-result-actions"><button type="button" class="jmn-button jmn-gold" data-result-book>Book ${escape(quizResult.service)} →</button><button type="button" class="jmn-button jmn-outline" data-retake>↻ Retake Quiz</button></div></div>`;
-      content.querySelector('[data-result-book]').addEventListener('click', () => {
-        // Open the next dialog first so body scroll stays locked during the handoff.
-        openBooking(true); quiz.close();
-      });
-      content.querySelector('[data-retake]').addEventListener('click', () => { step=0; answers=[]; quizResult=null; renderQuiz(true); });
+  root.querySelectorAll('[data-open="booking"]').forEach(button => button.addEventListener('click', openBooking));
+  const displayError = message => {
+    const parts = message.split('347-601-8884');
+    status.replaceChildren(document.createTextNode(parts[0]));
+    if (parts.length > 1) {
+      const phone = document.createElement('a');
+      phone.href = 'tel:+13476018884';
+      phone.textContent = '347-601-8884';
+      phone.style.textDecoration = 'underline';
+      status.append(phone, document.createTextNode(parts.slice(1).join('347-601-8884')));
     }
-    quiz.scrollTop = 0;
-    if (focus) content.querySelector('h3')?.focus({preventScroll:true});
-  }
-  const displayError = message => { status.textContent = message; status.hidden = false; };
+    status.hidden = false;
+  };
   form.addEventListener('submit', async event => {
     event.preventDefault();
     if (sending || !form.reportValidity()) return;
@@ -376,9 +323,6 @@ body:has(.c-store-cart) #jm-nav-widget .jmn-header{position:absolute}
     const payload = {
       event:'juanita.reservation.requested',schema_version:1,
       ...Object.fromEntries(new FormData(form)),
-      style_personality:quizResult?.title || '',
-      recommended_experience:quizResult?.service || '',
-      quiz_color:answers[0] || '',quiz_accent:answers[1] || '',quiz_shopping_preference:answers[2] || '',
       source:'boutique_navbar',page_url:location.href,submitted_at:new Date().toISOString()
     };
     sending=true; status.hidden=true;
@@ -390,7 +334,7 @@ body:has(.c-store-cart) #jm-nav-widget .jmn-header{position:absolute}
       const response = await fetch(endpoint.href, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),signal:controller.signal,credentials:'omit'});
       if (!response.ok) throw new Error('Request rejected');
       form.hidden=true; success.hidden=false; success.setAttribute('tabindex','-1');success.focus();
-      form.reset(); step=0; answers=[]; quizResult=null;
+      form.reset();
     } catch {
       displayError('We could not confirm your request was received. Your details are still here. Please call 347-601-8884 before trying again.');
     } finally {

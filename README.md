@@ -1,12 +1,11 @@
 # Juanita Michelle Boutique preview
 
-Shop-page replacements:
-- navbar-code.txt: complete interactive navbar, including quiz and reservation dialogs.
-- footer-code.txt: complete footer with absolute links back to the homepage sections.
-- homepage-code.txt: complete homepage, including navbar and footer.
+The homepage has three manually editable product previews. Shop links use https://juanitamichelleboutique.com/products-list.
 
-Replace the existing blocks in GHL, then publish all store pages that use them.
-Home: https://juanitamichelleboutique.com/homepage
-Shop: https://juanitamichelleboutique.com/products-list
-All homepage section links use the same new domain.
-Reservation automation remains unconnected in the standalone navbar.
+- homepage-code.txt: complete GHL homepage with navbar and footer.
+- navbar-code.txt: standalone store navbar with Book Your Experience; Style Quiz is removed.
+- footer-code.txt: standalone footer with tap-to-call phone link.
+- product-previews.json: the three editable product preview records.
+
+The booking form has Experience, Name, Email, Phone and Message for Juanita. Color Palette and Style Accent are removed.
+Replace the existing code blocks and publish the affected GHL pages. Reservation automation remains unconnected in the standalone navbar.

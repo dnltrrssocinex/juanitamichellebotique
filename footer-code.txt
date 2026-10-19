@@ -775,9 +775,6 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 #jm-footer .mb-1 {
   margin-bottom: 4px;
 }
-#jm-footer .mb-10 {
-  margin-bottom: 40px;
-}
 #jm-footer .mb-12 {
   margin-bottom: 48px;
 }
@@ -920,9 +917,6 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 #jm-footer .h-96 {
   height: 384px;
 }
-#jm-footer .h-\[18px\] {
-  height: 18px;
-}
 #jm-footer .h-\[1px\] {
   height: 1px;
 }
@@ -1051,9 +1045,6 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 }
 #jm-footer .w-\[100px\] {
   width: 100px;
-}
-#jm-footer .w-\[18px\] {
-  width: 18px;
 }
 #jm-footer .w-\[1px\] {
   width: 1px;
@@ -1419,9 +1410,6 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 #jm-footer .border-accent\/40 {
   border-color: hsl(var(--accent) / 0.4);
 }
-#jm-footer .border-accent\/60 {
-  border-color: hsl(var(--accent) / 0.6);
-}
 #jm-footer .border-border {
   border-color: hsl(var(--border));
 }
@@ -1464,9 +1452,6 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 #jm-footer .border-white\/10 {
   border-color: rgb(255 255 255 / 0.1);
 }
-#jm-footer .border-white\/40 {
-  border-color: rgb(255 255 255 / 0.4);
-}
 #jm-footer .border-l-transparent {
   border-left-color: transparent;
 }
@@ -1502,9 +1487,6 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 }
 #jm-footer .bg-muted {
   background-color: hsl(var(--muted));
-}
-#jm-footer .bg-muted-foreground\/30 {
-  background-color: hsl(var(--muted-foreground) / 0.3);
 }
 #jm-footer .bg-muted\/50 {
   background-color: hsl(var(--muted) / 0.5);
@@ -1669,9 +1651,6 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 }
 #jm-footer .pb-12 {
   padding-bottom: 48px;
-}
-#jm-footer .pb-2 {
-  padding-bottom: 8px;
 }
 #jm-footer .pb-3 {
   padding-bottom: 12px;
@@ -1841,10 +1820,6 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 #jm-footer .text-accent-foreground {
   color: hsl(var(--accent-foreground));
 }
-#jm-footer .text-amber-800 {
-  --tw-text-opacity: 1;
-  color: rgb(146 64 14 / var(--tw-text-opacity, 1));
-}
 #jm-footer .text-amber-900 {
   --tw-text-opacity: 1;
   color: rgb(120 53 15 / var(--tw-text-opacity, 1));
@@ -1864,10 +1839,6 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 }
 #jm-footer .text-destructive-foreground {
   color: hsl(var(--destructive-foreground));
-}
-#jm-footer .text-emerald-600 {
-  --tw-text-opacity: 1;
-  color: rgb(5 150 105 / var(--tw-text-opacity, 1));
 }
 #jm-footer .text-foreground {
   color: hsl(var(--foreground));
@@ -2102,9 +2073,6 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
   --tw-enter-translate-x: initial;
   --tw-enter-translate-y: initial;
 }
-#jm-footer .fade-in {
-  --tw-enter-opacity: 0;
-}
 #jm-footer .fade-in-0 {
   --tw-enter-opacity: 0;
 }
@@ -2323,16 +2291,8 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
   z-index: 20;
 }
 
-#jm-footer .hover\:border-accent:hover {
-  border-color: hsl(var(--accent));
-}
-
 #jm-footer .hover\:bg-accent:hover {
   background-color: hsl(var(--accent));
-}
-
-#jm-footer .hover\:bg-accent\/10:hover {
-  background-color: hsl(var(--accent) / 0.1);
 }
 
 #jm-footer .hover\:bg-destructive\/80:hover {
@@ -2377,10 +2337,6 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 
 #jm-footer .hover\:bg-sidebar-accent:hover {
   background-color: hsl(var(--sidebar-accent));
-}
-
-#jm-footer .hover\:bg-white\/10:hover {
-  background-color: rgb(255 255 255 / 0.1);
 }
 
 #jm-footer .hover\:bg-white\/5:hover {
@@ -3338,10 +3294,6 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
     max-width: 384px;
   }
 
-  #jm-footer .sm\:max-w-xl {
-    max-width: 576px;
-  }
-
   #jm-footer .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -3897,6 +3849,6 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 #jm-footer [hidden]{display:none!important;}
 
 </style>
-<div id="jm-footer"><footer class="bg-primary text-primary-foreground pt-16 pb-12 border-t border-white/10"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-primary-foreground/15"><div class="space-y-4"><div class="flex flex-col"><span class="font-script text-3xl gold-text-gradient leading-none">Juanita Michelle&#x27;s</span><span class="text-[10px] tracking-[0.4em] font-sans font-semibold text-primary-foreground/80 mt-1">BOUTIQUE</span></div><p class="text-xs text-primary-foreground/75 leading-relaxed">West &amp; Southwest Philadelphia&#x27;s premier fashion boutique and experiential styling studio. Helping clients express and refine their personal style with warmth and trusted guidance.</p><div class="flex items-center gap-3 pt-2"><span class="text-xs font-semibold text-accent">Follow Juanita:</span><a href="https://www.facebook.com/p/Juanita-Michelles-Boutique-100092200747466/" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full bg-primary-foreground/10 hover:bg-accent hover:text-amber-950 transition-colors" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook w-4 h-4"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a><a href="https://www.tiktok.com/@juanitaboutique" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full bg-primary-foreground/10 hover:bg-accent hover:text-amber-950 transition-colors" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.37v14.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.28 0 .55.04.81.11v-3.4a6.27 6.27 0 0 0-1-.08A6.27 6.27 0 0 0 3 16.92a6.27 6.27 0 0 0 6.27 6.27a6.27 6.27 0 0 0 6.27-6.27V9.01a8.34 8.34 0 0 0 4.83 1.54V7.18a4.85 4.85 0 0 1-.78-.49z"></path></svg></a><a href="https://www.instagram.com/juanitamichelles/" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full bg-primary-foreground/10 hover:bg-accent hover:text-amber-950 transition-colors" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram w-4 h-4"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a></div></div><div class="space-y-3"><h4 class="font-serif text-lg font-bold text-accent">Explore</h4><ul class="space-y-2 text-xs text-primary-foreground/80"><li><a href="https://juanitamichelleboutique.com/homepage" class="hover:text-accent transition-colors">Home</a></li><li><a href="https://juanitamichelleboutique.com/products-list" class="hover:text-accent transition-colors">Shop the Boutique</a></li><li><a href="https://juanitamichelleboutique.com/homepage#experiences" class="hover:text-accent transition-colors">Experiences</a></li><li><a href="https://juanitamichelleboutique.com/homepage#about" class="hover:text-accent transition-colors">Juanita&#x27;s Story</a></li><li><a href="https://juanitamichelleboutique.com/homepage#visit" class="hover:text-accent transition-colors">Visit &amp; Contact</a></li></ul></div><div class="space-y-3"><h4 class="font-serif text-lg font-bold text-accent">Visit &amp; Contact</h4><div class="space-y-2 text-xs text-primary-foreground/80"><p class="flex items-start gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin w-4 h-4 text-accent shrink-0 mt-0.5"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg><span>4862 Parkside Avenue, Philadelphia, PA 19131</span></p><p class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-4 h-4 text-accent shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><span>347-601-8884</span></p></div></div></div><div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-primary-foreground/60 gap-4"><p>© <span data-jm-year>2026</span> Juanita Michelle Boutique. All rights reserved.</p><p class="flex items-center gap-1"><span>&quot;You already have style — we help you refine it.&quot;</span></p></div></div></footer></div>
+<div id="jm-footer"><footer class="bg-primary text-primary-foreground pt-16 pb-12 border-t border-white/10"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-primary-foreground/15"><div class="space-y-4"><div class="flex flex-col"><span class="font-script text-3xl gold-text-gradient leading-none">Juanita Michelle&#x27;s</span><span class="text-[10px] tracking-[0.4em] font-sans font-semibold text-primary-foreground/80 mt-1">BOUTIQUE</span></div><p class="text-xs text-primary-foreground/75 leading-relaxed">West &amp; Southwest Philadelphia&#x27;s premier fashion boutique and experiential styling studio. Helping clients express and refine their personal style with warmth and trusted guidance.</p><div class="flex items-center gap-3 pt-2"><span class="text-xs font-semibold text-accent">Follow Juanita:</span><a href="https://www.facebook.com/p/Juanita-Michelles-Boutique-100092200747466/" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full bg-primary-foreground/10 hover:bg-accent hover:text-amber-950 transition-colors" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook w-4 h-4"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a><a href="https://www.tiktok.com/@juanitaboutique" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full bg-primary-foreground/10 hover:bg-accent hover:text-amber-950 transition-colors" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.37v14.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.28 0 .55.04.81.11v-3.4a6.27 6.27 0 0 0-1-.08A6.27 6.27 0 0 0 3 16.92a6.27 6.27 0 0 0 6.27 6.27a6.27 6.27 0 0 0 6.27-6.27V9.01a8.34 8.34 0 0 0 4.83 1.54V7.18a4.85 4.85 0 0 1-.78-.49z"></path></svg></a><a href="https://www.instagram.com/juanitamichelles/" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full bg-primary-foreground/10 hover:bg-accent hover:text-amber-950 transition-colors" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram w-4 h-4"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a></div></div><div class="space-y-3"><h4 class="font-serif text-lg font-bold text-accent">Explore</h4><ul class="space-y-2 text-xs text-primary-foreground/80"><li><a href="https://juanitamichelleboutique.com/homepage" class="hover:text-accent transition-colors">Home</a></li><li><a href="https://juanitamichelleboutique.com/products-list" class="hover:text-accent transition-colors">Shop the Boutique</a></li><li><a href="https://juanitamichelleboutique.com/homepage#experiences" class="hover:text-accent transition-colors">Experiences</a></li><li><a href="https://juanitamichelleboutique.com/homepage#about" class="hover:text-accent transition-colors">Juanita&#x27;s Story</a></li><li><a href="https://juanitamichelleboutique.com/homepage#visit" class="hover:text-accent transition-colors">Visit &amp; Contact</a></li></ul></div><div class="space-y-3"><h4 class="font-serif text-lg font-bold text-accent">Visit &amp; Contact</h4><div class="space-y-2 text-xs text-primary-foreground/80"><p class="flex items-start gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin w-4 h-4 text-accent shrink-0 mt-0.5"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg><span>4862 Parkside Avenue, Philadelphia, PA 19131</span></p><p class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-4 h-4 text-accent shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><a href="tel:+13476018884" class="hover:text-accent transition-colors" aria-label="Call Juanita Michelle Boutique at 347-601-8884">347-601-8884</a></p></div></div></div><div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-primary-foreground/60 gap-4"><p>© <span data-jm-year>2026</span> Juanita Michelle Boutique. All rights reserved.</p><p class="flex items-center gap-1"><span>&quot;You already have style — we help you refine it.&quot;</span></p></div></div></footer></div>
 <script>(function(){const root=document.getElementById('jm-footer');if(!root)return;function fit(){root.style.setProperty('--jm-page-width',document.documentElement.clientWidth+'px');}fit();addEventListener('resize',fit);addEventListener('DOMContentLoaded',fit,{once:true});if(window.ResizeObserver)new ResizeObserver(fit).observe(document.documentElement);})();</script>
 <script>(function(){const year=document.querySelector('#jm-footer [data-jm-year]');if(year)year.textContent=new Date().getFullYear();})();</script>

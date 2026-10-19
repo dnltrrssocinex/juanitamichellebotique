@@ -1,0 +1,396 @@
+<!-- JUANITA MICHELLE: NAVBAR + STYLE QUIZ + RESERVATION FORM ONLY.
+Replace the previous standalone navbar block with ALL of this code.
+Install the same navbar on the homepage and shop page for section navigation.
+Set reservationEndpoint only after connecting and testing your GHL automation.
+The endpoint must accept browser JSON POST requests and return a successful HTTP status.
+Never put a private API key into this public code.
+If using GHL native sections, update the selectors below to their actual section IDs.
+-->
+<script type="application/json" id="jm-navbar-settings">{
+  "homeUrl": "https://shop.juanitamichelleboutique.com/homepage",
+  "shopUrl": "https://shop.juanitamichelleboutique.com/products-list",
+  "reservationEndpoint": "",
+  "sections": {
+    "experiences": "#experiences",
+    "about": "#about",
+    "visit": "#visit",
+    "contact": "#contact"
+  }
+}</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>#jm-nav-widget{--jmn-ink:#281c21;--jmn-pink:#e58fb0;--jmn-cream:#faf6f3;--jmn-line:#ead9df;font:14px/1.55 'Plus Jakarta Sans',sans-serif;color:var(--jmn-ink);text-align:left}
+#jm-nav-widget *,#jm-nav-widget *::before,#jm-nav-widget *::after{box-sizing:border-box}
+#jm-nav-widget [hidden]{display:none!important}
+/* Avoid a duplicate header when this block accompanies the earlier whole-homepage export. */
+body:has(#jm-nav-widget) #jm-site-root header,body:has(#jm-nav-widget) #jm-site-root header+div[aria-hidden="true"]{display:none!important}
+#jm-nav-widget button,#jm-nav-widget input,#jm-nav-widget select,#jm-nav-widget textarea{font:inherit}
+#jm-nav-widget button,#jm-nav-widget a{-webkit-tap-highlight-color:transparent}
+#jm-nav-widget button{cursor:pointer}
+#jm-nav-widget a{text-decoration:none;color:inherit}
+#jm-nav-widget button:focus-visible,#jm-nav-widget a:focus-visible,#jm-nav-widget input:focus-visible,#jm-nav-widget select:focus-visible,#jm-nav-widget textarea:focus-visible{outline:3px solid #e58fb0;outline-offset:3px}
+#jm-nav-widget .jmn-header{position:fixed;top:0;left:0;right:0;width:100%;z-index:9999;background:#111;color:#f7f1e7;box-shadow:0 1px 0 #ffffff1a}
+#jm-nav-widget .jmn-top{max-width:1280px;margin:auto;min-height:92px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px 32px}
+#jm-nav-widget .jmn-brand{display:flex;flex-direction:column;flex-shrink:0}
+#jm-nav-widget .jmn-brand>span{font:32px/1.1 'Great Vibes',cursive;color:#d4af37}
+#jm-nav-widget .jmn-brand small{font-size:10px;letter-spacing:4px;font-weight:600;margin-top:7px}
+#jm-nav-widget .jmn-tagline{text-align:center;font-size:11px;line-height:1.6;margin:0}
+#jm-nav-widget .jmn-tagline strong{color:var(--jmn-pink)}
+#jm-nav-widget .jmn-actions{display:flex;align-items:center;gap:10px}
+#jm-nav-widget .jmn-button{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:44px;border-radius:6px;padding:11px 18px;border:1px solid transparent;font-size:12px;font-weight:700;line-height:1.4;transition:box-shadow .2s,filter .2s;text-align:center;white-space:normal}
+#jm-nav-widget .jmn-button:hover{filter:brightness(1.07);box-shadow:0 4px 16px #0002}
+#jm-nav-widget .jmn-button:disabled{opacity:.65;cursor:wait}
+#jm-nav-widget .jmn-rose{background:#e58fb0;color:#25151c;border-color:#f0b1ca}
+#jm-nav-widget .jmn-gold{background:linear-gradient(110deg,#f1d98a,#c7a438 55%,#987c1d);color:#211800}
+#jm-nav-widget .jmn-outline{background:transparent;color:var(--jmn-ink);border-color:var(--jmn-line)}
+#jm-nav-widget .jmn-menu{display:none;color:#f7f1e7;background:transparent;border:1px solid #ffffff40;border-radius:6px;min-width:44px;min-height:44px;font-size:24px}
+#jm-nav-widget #jm-navigation{display:flex;justify-content:center;gap:32px;border-top:1px solid #ffffff1a;padding:0 16px}
+#jm-nav-widget #jm-navigation a{padding:14px 0 12px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;border-bottom:2px solid transparent}
+#jm-nav-widget #jm-navigation a:hover,#jm-nav-widget #jm-navigation a[aria-current]{color:var(--jmn-pink);border-bottom-color:var(--jmn-pink)}
+#jm-nav-widget .jmn-dialog{position:fixed;inset:0;width:calc(100% - 32px);max-width:576px;max-height:calc(100dvh - 32px);margin:auto;padding:0;border:1px solid #e7c4d1;border-radius:12px;background:var(--jmn-cream);color:var(--jmn-ink);overflow:auto;overscroll-behavior:contain;box-shadow:0 25px 100px #0006}
+#jm-nav-widget .jmn-dialog::backdrop{background:#000b;backdrop-filter:blur(3px)}
+#jm-nav-widget .jmn-booking{max-width:672px}
+#jm-nav-widget .jmn-dialog-header{position:relative;background:#111;color:#f5efe7;padding:24px 44px 24px 24px}
+#jm-nav-widget .jmn-close{position:absolute;right:8px;top:8px;background:#ffffff0d;color:#f5efe7;width:36px;height:36px;border:1px solid #ffffff30;border-radius:50%;font:26px/1 sans-serif}
+#jm-nav-widget .jmn-eyebrow{margin:0 0 5px;color:var(--jmn-pink);font-size:11px;text-transform:uppercase;font-weight:700;letter-spacing:1px}
+#jm-nav-widget .jmn-dialog h2{font:700 26px/1.1 'Cormorant Garamond',serif;margin:0 0 8px;color:#f7f1e7;letter-spacing:-.4px}
+#jm-nav-widget .jmn-dialog-header>p:last-child{margin:0;font-size:12px;line-height:1.6;color:#d1cdc8}
+#jm-nav-widget .jmn-dialog-body{padding:28px 24px}
+#jm-nav-widget .jmn-progress{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#8b717b;border-bottom:1px solid var(--jmn-line);padding-bottom:10px;margin-bottom:24px}
+#jm-nav-widget .jmn-dots{display:flex;gap:4px}
+#jm-nav-widget .jmn-dots i{display:block;width:7px;height:6px;border-radius:8px;background:#d6c9cd}
+#jm-nav-widget .jmn-dots i.active{width:24px;background:var(--jmn-pink)}
+#jm-nav-widget .jmn-question{font:700 22px/1.3 'Cormorant Garamond',serif;margin:0 0 22px}
+#jm-nav-widget .jmn-options{display:grid;gap:12px}
+#jm-nav-widget .jmn-option{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:transparent;color:var(--jmn-ink);border:1px solid var(--jmn-line);border-radius:12px;padding:16px;min-height:55px;font-size:13px}
+#jm-nav-widget .jmn-option:hover,#jm-nav-widget .jmn-option[aria-pressed=true]{background:#e58fb012;border-color:var(--jmn-pink)}
+#jm-nav-widget .jmn-swatch{width:20px;height:20px;flex-shrink:0;border-radius:50%;border:1px solid #ffffff60}
+#jm-nav-widget .jmn-tag{margin-left:auto;flex-shrink:0;border:1px solid #edc7d6;padding:2px 9px;border-radius:40px;font-size:10px;color:#8d4c20}
+#jm-nav-widget .jmn-back{background:transparent;border:0;padding:0;color:#8b717b;font-size:12px;margin-top:24px}
+#jm-nav-widget .jmn-result{text-align:center}
+#jm-nav-widget .jmn-result h3,#jm-nav-widget .jmn-success h3{font:600 32px/1.15 'Cormorant Garamond',serif;margin:14px 0 12px}
+#jm-nav-widget .jmn-result>p{color:#8b717b;line-height:1.7;font-size:14px;margin-bottom:24px}
+#jm-nav-widget .jmn-result-label{display:inline-block;background:linear-gradient(110deg,#f1d98a,#987c1d);border-radius:40px;padding:4px 14px;font-size:11px;font-weight:700;color:#281b00}
+#jm-nav-widget .jmn-recommendations{background:white;border:1px solid #f4ccd9;border-radius:12px;padding:16px;text-align:left}
+#jm-nav-widget .jmn-recommendations-title{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:11px;font-weight:700;flex-wrap:wrap}
+#jm-nav-widget .jmn-recommendations ul{display:grid;grid-template-columns:repeat(3,1fr);list-style:none;padding:0;margin:12px 0 0;gap:8px}
+#jm-nav-widget .jmn-recommendations li{background:var(--jmn-cream);border:1px solid var(--jmn-line);padding:9px;border-radius:7px;font-size:11px;line-height:1.4}
+#jm-nav-widget .jmn-recommendations li::before{content:'✓ ';color:#009c79}
+#jm-nav-widget .jmn-result-actions{display:flex;gap:12px;margin-top:28px}
+#jm-nav-widget .jmn-result-actions .jmn-gold{flex:1}
+#jm-nav-widget #jm-reservation-form{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+#jm-nav-widget .jmn-full{grid-column:1/-1}
+#jm-nav-widget .jmn-field{display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:600;min-width:0}
+#jm-nav-widget .jmn-field input,#jm-nav-widget .jmn-field select,#jm-nav-widget .jmn-field textarea{width:100%;min-width:0;background:transparent;color:var(--jmn-ink);border:1px solid var(--jmn-line);border-radius:12px;padding:10px 13px;font-size:14px;font-weight:400;line-height:1.5}
+#jm-nav-widget .jmn-field textarea{resize:vertical}
+#jm-nav-widget .jmn-field input::placeholder,#jm-nav-widget .jmn-field textarea::placeholder{color:#929aa8}
+#jm-nav-widget .jmn-field select{font-weight:600}
+#jm-nav-widget .jmn-submit{font-size:14px;margin-top:8px}
+#jm-nav-widget .jmn-fine-print{font-size:10px;text-align:center;color:#8b717b;margin:-9px 0 0}
+#jm-nav-widget .jmn-form-status{color:#8c284a;background:#fae9ee;border:1px solid #e6b3c5;border-radius:8px;padding:12px;margin:0;font-size:12px}
+#jm-nav-widget .jmn-success{text-align:center;padding:24px 0}
+#jm-nav-widget .jmn-success>p{margin-bottom:24px}
+:is(.c-section,.c-row,.c-column,.c-custom-code):has(#jm-nav-space),:is(.c-section,.c-row,.c-column,.c-custom-code):has(#jm-nav-space)>.inner{padding-top:0!important;padding-bottom:0!important;margin-top:0!important;margin-bottom:0!important}
+@media(max-width:1100px){#jm-nav-widget .jmn-tagline{display:none}}
+@media(max-width:767px){#jm-nav-widget .jmn-top{display:grid;grid-template-columns:1fr auto;gap:14px;padding:14px 20px}#jm-nav-widget .jmn-brand>span{font-size:29px}#jm-nav-widget .jmn-menu{display:block;grid-column:2;grid-row:1}#jm-nav-widget .jmn-actions{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}#jm-nav-widget #jm-navigation{display:none}#jm-nav-widget #jm-navigation.is-open{display:flex;flex-wrap:wrap;gap:8px 20px;padding:8px 16px}#jm-nav-widget #jm-navigation a{padding:9px 0}#jm-nav-widget .jmn-button{padding:11px 12px}#jm-nav-widget .jmn-dialog-header{padding:22px 42px 22px 20px}#jm-nav-widget .jmn-dialog-body{padding:24px 20px}}
+@media(max-width:480px){#jm-nav-widget .jmn-option{flex-wrap:wrap;gap:8px;padding:13px}#jm-nav-widget .jmn-option .jmn-option-label{flex:1}#jm-nav-widget .jmn-option .jmn-tag{font-size:9px}#jm-nav-widget .jmn-recommendations ul{grid-template-columns:1fr}#jm-nav-widget .jmn-result-actions{flex-direction:column}#jm-nav-widget #jm-reservation-form{grid-template-columns:1fr}#jm-nav-widget .jmn-dialog h2{font-size:24px}}
+@media(prefers-reduced-motion:reduce){#jm-nav-widget *{scroll-behavior:auto!important;transition:none!important}}
+</style>
+<div id="jm-nav-space" aria-hidden="true"></div>
+<div id="jm-nav-widget">
+  <header class="jmn-header">
+    <div class="jmn-top">
+      <a class="jmn-brand" data-home href="https://shop.juanitamichelleboutique.com/homepage" aria-label="Juanita Michelle Boutique homepage">
+        <span>Juanita Michelle's</span><small>BOUTIQUE</small>
+      </a>
+      <p class="jmn-tagline"><em>Where Confidence Meets Style &amp; Elegance.</em><br><strong>And It Looks Good on You.</strong></p>
+      <div class="jmn-actions">
+        <button type="button" class="jmn-button jmn-rose" data-open="quiz"><span aria-hidden="true">✧</span> Style Quiz</button>
+        <button type="button" class="jmn-button jmn-gold" data-open="booking"><span aria-hidden="true">▣</span> Book Experience</button>
+      </div>
+      <button type="button" class="jmn-menu" aria-label="Open navigation menu" aria-expanded="false" aria-controls="jm-navigation">☰</button>
+    </div>
+    <nav id="jm-navigation" aria-label="Boutique navigation">
+      <a data-home href="https://shop.juanitamichelleboutique.com/homepage">Home</a>
+      <a data-shop href="https://shop.juanitamichelleboutique.com/products-list">Shop</a>
+      <a data-section="experiences" href="https://shop.juanitamichelleboutique.com/homepage#experiences">Experiences</a>
+      <a data-section="about" href="https://shop.juanitamichelleboutique.com/homepage#about">About</a>
+      <a data-section="visit" href="https://shop.juanitamichelleboutique.com/homepage#visit">Visit</a>
+      <a data-section="contact" href="https://shop.juanitamichelleboutique.com/homepage#contact">Contact</a>
+    </nav>
+  </header>
+  <dialog id="jm-style-dialog" class="jmn-dialog" aria-labelledby="jm-style-title" aria-describedby="jm-style-description">
+    <div class="jmn-dialog-header">
+      <button type="button" class="jmn-close" data-close aria-label="Close style quiz">×</button>
+      <p class="jmn-eyebrow">✧ Interactive Styling Tool</p>
+      <h2 id="jm-style-title">Discover Your Signature Accent Match</h2>
+      <p id="jm-style-description">Answer 3 quick questions so Juanita can recommend your ideal finishing touches.</p>
+    </div>
+    <div class="jmn-dialog-body" id="jm-quiz-content"></div>
+  </dialog>
+  <dialog id="jm-booking-dialog" class="jmn-dialog jmn-booking" aria-labelledby="jm-booking-title" aria-describedby="jm-booking-description">
+    <div class="jmn-dialog-header">
+      <button type="button" class="jmn-close" data-close aria-label="Close reservation form">×</button>
+      <p class="jmn-eyebrow">✧ Personalized Experience Reservation</p>
+      <h2 id="jm-booking-title">Book Your Boutique Session</h2>
+      <p id="jm-booking-description">Whether in-person in Philadelphia or virtual from afar, Juanita Michelle is ready to guide your style journey.</p>
+    </div>
+    <div class="jmn-dialog-body">
+      <form id="jm-reservation-form">
+        <label class="jmn-field jmn-full">Choose Experience Type
+          <select name="experience_type" required>
+            <option value="Sip & Shop Experience">Sip &amp; Shop Experience (Private Group or Party)</option>
+            <option value="One-on-One Personal Styling">One-on-One Personal Styling Session</option>
+            <option value="Wholesale & Gifting Inquiry">Wholesale &amp; Gifting Inquiry</option>
+            <option value="Custom Hat Bar Workshop">Custom Hat Bar Workshop</option>
+            <option value="Jewelry Accent Styling">Jewelry Accent Styling</option>
+            <option value="Curated Accessory Consultation">Curated Accessory Consultation</option>
+            <option value="Perfume Blend Studio">Perfume Blend Studio</option>
+            <option value="Express Accent Concierge">Express Accent Concierge</option>
+          </select>
+        </label>
+        <label class="jmn-field">First Name *<input name="first_name" autocomplete="given-name" required maxlength="100" placeholder="Juanita"></label>
+        <label class="jmn-field">Last Name *<input name="last_name" autocomplete="family-name" required maxlength="100" placeholder="Michelle"></label>
+        <label class="jmn-field">Email Address *<input name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com"></label>
+        <label class="jmn-field">Phone Number *<input name="phone" type="tel" autocomplete="tel" required minlength="7" maxlength="40" placeholder="(215) 555-0199"></label>
+        <label class="jmn-field">Favorite Color Palette<input name="favorite_color" maxlength="200" placeholder="e.g. Burgundy & Gold"></label>
+        <label class="jmn-field">Preferred Style Accent<input name="preferred_accent" maxlength="200" placeholder="e.g. Custom Hat, Chunky Gold"></label>
+        <label class="jmn-field jmn-full">Tell Juanita what you're dressing for:
+          <textarea name="notes" rows="3" maxlength="3000" placeholder="Tell us about your occasion and the finishing touches you have in mind."></textarea>
+        </label>
+        <p class="jmn-form-status jmn-full" id="jm-form-status" role="status" aria-live="polite" hidden></p>
+        <button type="submit" class="jmn-button jmn-gold jmn-full jmn-submit">Submit VIP Reservation Request <span aria-hidden="true">→</span></button>
+        <p class="jmn-fine-print jmn-full">No pressure sales. Juanita provides warm, one-on-one attention tailored to your budget and timeline.</p>
+      </form>
+      <div id="jm-booking-success" class="jmn-success" hidden>
+        <p class="jmn-eyebrow">Reservation Request Sent</p><h3>Thank you for reaching out.</h3>
+        <p>Juanita will contact you to discuss your session. Your appointment is confirmed once you agree on a date and time.</p>
+        <button type="button" class="jmn-button jmn-gold" data-close>Return to Boutique</button>
+      </div>
+    </div>
+  </dialog>
+</div>
+
+<script>(() => {
+  const root = document.getElementById('jm-nav-widget');
+  if (!root || root.dataset.ready) return;
+  root.dataset.ready = 'true';
+  const config = JSON.parse(document.getElementById('jm-navbar-settings').textContent);
+  const home = new URL(config.homeUrl);
+  const path = value => value.replace(/\/+$/, '') || '/';
+  const onHomepage = () => location.origin === home.origin && path(location.pathname) === path(home.pathname);
+  const localPreview = () => ['localhost','127.0.0.1'].includes(location.hostname);
+  const header = root.querySelector('.jmn-header');
+  const spacer = document.getElementById('jm-nav-space');
+  const nav = root.querySelector('#jm-navigation');
+  const menu = root.querySelector('.jmn-menu');
+  const quiz = root.querySelector('#jm-style-dialog');
+  const booking = root.querySelector('#jm-booking-dialog');
+  const content = root.querySelector('#jm-quiz-content');
+  const form = root.querySelector('#jm-reservation-form');
+  const status = root.querySelector('#jm-form-status');
+  const success = root.querySelector('#jm-booking-success');
+  let step = 0, answers = [], quizResult = null, sending = false;
+  let previousOverflow = '';
+  // Escape GHL ancestors that apply transforms or clipping to Custom Code elements.
+  document.body.appendChild(root);
+  const resize = new ResizeObserver(() => { spacer.style.height = header.offsetHeight + 'px'; });
+  resize.observe(header);
+  spacer.style.height = header.offsetHeight + 'px';
+  function closeMenu() {
+    nav.classList.remove('is-open'); menu.setAttribute('aria-expanded', 'false');
+    menu.setAttribute('aria-label', 'Open navigation menu'); menu.textContent = '☰';
+  }
+  menu.addEventListener('click', () => {
+    const open = nav.classList.toggle('is-open');
+    menu.setAttribute('aria-expanded', String(open));
+    menu.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+    menu.textContent = open ? '×' : '☰';
+  });
+  const headings = {experiences:'More Than Shopping — An Experience',about:'Meet Juanita Michelle',visit:'Visit & Contact',contact:'Visit & Contact'};
+  function section(key) {
+    // Never mistake a shop footer anchor for a homepage section.
+    if (!onHomepage() && !localPreview()) return null;
+    // IDs are editable for native GHL sections; heading lookup also supports the exported homepage.
+    let target;
+    try { target = document.querySelector(config.sections[key]); } catch { return null; }
+    if (!target) target = [...document.querySelectorAll('h2')].find(h => h.textContent.trim() === headings[key])?.closest('section');
+    return target;
+  }
+  function jump(key, updateHash = true) {
+    const target = section(key);
+    if (!target) return false;
+    closeMenu();
+    const top = target.getBoundingClientRect().top + window.scrollY - header.offsetHeight - 16;
+    window.scrollTo({top: Math.max(0, top), behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
+    if (updateHash) history.replaceState(null, '', '#' + key);
+    nav.querySelectorAll('[data-section]').forEach(link => {
+      if (link.dataset.section === key) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+    return true;
+  }
+  const normalClick = event => !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey && event.button === 0;
+  function navigate(event, url) {
+    if (!normalClick(event)) return;
+    event.preventDefault(); event.stopPropagation(); closeMenu();
+    window.location.assign(url);
+  }
+  root.querySelectorAll('[data-home]').forEach(link => {
+    link.href = home.href;
+    link.addEventListener('click', event => {
+      if (!normalClick(event)) return;
+      if (onHomepage()) {
+        event.preventDefault();event.stopPropagation();closeMenu();
+        history.replaceState(null,'',home.pathname + home.search);
+        window.scrollTo({top:0,behavior:'smooth'});
+        nav.querySelectorAll('[aria-current]').forEach(item=>item.removeAttribute('aria-current'));
+        nav.querySelector('[data-home]')?.setAttribute('aria-current','page');
+      } else navigate(event,home.href);
+    },true);
+  });
+  root.querySelectorAll('[data-shop]').forEach(link => {
+    link.href = config.shopUrl;
+    link.addEventListener('click', event => navigate(event,link.href),true);
+  });
+  if (onHomepage() && !location.hash) nav.querySelector('[data-home]')?.setAttribute('aria-current','page');
+  if (path(location.pathname) === path(new URL(config.shopUrl).pathname)) nav.querySelector('[data-shop]')?.setAttribute('aria-current','page');
+  root.querySelectorAll('[data-section]').forEach(link => {
+    link.href = home.href.split('#')[0] + '#' + link.dataset.section;
+    link.addEventListener('click', event => {
+      if (!normalClick(event)) return;
+      event.preventDefault(); event.stopPropagation();
+      nav.querySelectorAll('[data-home],[data-shop]').forEach(item=>item.removeAttribute('aria-current'));
+      if (!jump(link.dataset.section)) window.location.assign(link.href);
+    },true);
+  });
+  // Revisit hash targets after the homepage renderer and images finish loading.
+  const followHash = () => {
+    const key = location.hash.slice(1);
+    if (Object.hasOwn(config.sections, key)) return jump(key, false);
+    return false;
+  };
+  let hashFrame = 0;
+  const queueHash = () => {
+    cancelAnimationFrame(hashFrame);
+    hashFrame = requestAnimationFrame(() => requestAnimationFrame(followHash));
+  };
+  // GHL and the homepage renderer can insert content after the initial page load.
+  // Keep watching briefly so their initial scroll resets do not override the destination.
+  const sectionObserver = new MutationObserver(queueHash);
+  sectionObserver.observe(document.body, {childList:true,subtree:true});
+  queueHash();
+  setTimeout(() => sectionObserver.disconnect(), 10000);
+  window.addEventListener('hashchange', followHash);
+  window.addEventListener('load', queueHash, {once:true});
+
+  function openDialog(dialog) {
+    closeMenu();
+    if (!quiz.open && !booking.open) { previousOverflow = document.body.style.overflow; document.body.style.overflow = 'hidden'; }
+    dialog.showModal();
+  }
+  [quiz, booking].forEach(dialog => {
+    dialog.querySelectorAll('[data-close]').forEach(button => button.addEventListener('click', () => dialog.close()));
+    dialog.addEventListener('click', event => {
+      if (event.target !== dialog) return;
+      const r = dialog.getBoundingClientRect();
+      if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) dialog.close();
+    });
+    dialog.addEventListener('close', () => {
+      if (!quiz.open && !booking.open) document.body.style.overflow = previousOverflow;
+    });
+  });
+  function openBooking(fromQuiz) {
+    if (!sending) {
+      form.hidden = false; success.hidden = true; status.hidden = true;
+      form.elements.experience_type.value = fromQuiz ? quizResult.service : 'Sip & Shop Experience';
+      if (fromQuiz) {
+        form.elements.favorite_color.value = answers[0];
+        form.elements.preferred_accent.value = answers[1];
+      }
+    }
+    openDialog(booking);
+  }
+  root.querySelectorAll('[data-open]').forEach(button => button.addEventListener('click', () => {
+    if (button.dataset.open === 'quiz') { renderQuiz(); openDialog(quiz); }
+    else openBooking(false);
+  }));
+  const questions = [
+    {text:'What color family usually makes you feel most like yourself?', options:[
+      ['Deep Burgundy & Rich Wine','#4c1927','Glamour & Warmth'],['Champagne Gold & Warm Neutrals','#d4af37','Elegance & Polish'],
+      ['Bold Jewel Tones (Emerald, Sapphire)','#1b4332','Vibrant Statement'],['Classic Black & Monochromatic','#1a1a1a','Chic Edge']]},
+    {text:"When completing an outfit, what's usually missing?",options:[
+      ['The statement hat or brim to crown the look'],['Distinctive earrings, necklace, or cuff jewelry'],
+      ['A unique handbag or custom finishing accessory'],['A signature personal fragrance that lingers']]},
+    {text:'How do you prefer to shop for key pieces?',options:[
+      ['In an intimate, fun Sip & Shop atmosphere with friends'],['One-on-one with Juanita guiding every step'],
+      ['Hands-on crafting my own custom accessories'],['Quick personalized recommendations delivered or prepped']]}
+  ];
+  const personalities = [
+    {title:'The Crown Accent Specialist',service:'Custom Hat Bar Workshop',description:'You have effortless poise! Your look gains maximum impact when crowned with a custom fedora or brim tailored with luxury ribbons, feathers, and gold hardware.',items:['Custom Distressed Fedora','Layered Statement Necklaces','Signature Leather Handbag']},
+    {title:'The Statement Jewelry Muse',service:'Jewelry Accent Styling',description:'You bring a look to life through distinctive details. Sculptural earrings, layered necklaces, and polished cuffs give your personal style a confident finishing touch.',items:['Statement Earrings','Layered Necklaces','Sculptural Gold Cuffs']},
+    {title:'The Curated Accessory Connoisseur',service:'Curated Accessory Consultation',description:'You appreciate an accessory that tells a story. A beautifully structured handbag and thoughtfully chosen accents make your everyday look feel distinctly yours.',items:['Signature Leather Handbag','Statement Accent Scarf','Distinctive Clutch']},
+    {title:'Sensory Signature Elegance',service:'Perfume Blend Studio',description:'Your style is subtle yet unforgettable. A personal fragrance and thoughtfully layered finishing touches leave a lasting impression.',items:['Bespoke Perfume Blend','Chunky Gold Cuffs','Velvet Accent Clutch']}
+  ];
+  const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  function renderQuiz(focus = false) {
+    if (step < 3) {
+      const q = questions[step];
+      content.innerHTML = `<div class="jmn-progress"><span>Question ${step+1} of 3</span><span class="jmn-dots" aria-hidden="true">${questions.map((_,i)=>`<i class="${i===step?'active':''}"></i>`).join('')}</span></div>
+        <h3 class="jmn-question" tabindex="-1">${escape(q.text)}</h3><div class="jmn-options">${q.options.map((opt,i)=>
+          `<button type="button" class="jmn-option" data-answer="${i}" aria-pressed="${answers[step]===opt[0]}">${opt[1]?`<span class="jmn-swatch" style="background:${opt[1]}" aria-hidden="true"></span>`:''}<span class="jmn-option-label">${escape(opt[0])}</span>${opt[2]?`<span class="jmn-tag">${escape(opt[2])}</span>`:''}</button>`).join('')}</div>${step>0?'<button type="button" class="jmn-back">← Previous question</button>':''}`;
+      content.querySelectorAll('[data-answer]').forEach(button => button.addEventListener('click', () => {
+        answers[step] = q.options[Number(button.dataset.answer)][0]; step++; renderQuiz(true);
+      }));
+      content.querySelector('.jmn-back')?.addEventListener('click', () => { step--; renderQuiz(true); });
+    } else {
+      const index = questions[1].options.findIndex(opt => opt[0] === answers[1]);
+      quizResult = personalities[index] || personalities[0];
+      content.innerHTML = `<div class="jmn-result"><span class="jmn-result-label">Your Style Personality</span><h3 tabindex="-1">${escape(quizResult.title)}</h3><p>${escape(quizResult.description)}</p>
+        <div class="jmn-recommendations"><div class="jmn-recommendations-title"><span>✧ RECOMMENDED FINISHING ACCENTS:</span><span class="jmn-tag">${escape(answers[0])}</span></div><ul>${quizResult.items.map(item=>`<li>${escape(item)}</li>`).join('')}</ul></div>
+        <div class="jmn-result-actions"><button type="button" class="jmn-button jmn-gold" data-result-book>Book ${escape(quizResult.service)} →</button><button type="button" class="jmn-button jmn-outline" data-retake>↻ Retake Quiz</button></div></div>`;
+      content.querySelector('[data-result-book]').addEventListener('click', () => {
+        // Open the next dialog first so body scroll stays locked during the handoff.
+        openBooking(true); quiz.close();
+      });
+      content.querySelector('[data-retake]').addEventListener('click', () => { step=0; answers=[]; quizResult=null; renderQuiz(true); });
+    }
+    quiz.scrollTop = 0;
+    if (focus) content.querySelector('h3')?.focus({preventScroll:true});
+  }
+  const displayError = message => { status.textContent = message; status.hidden = false; };
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    if (sending || !form.reportValidity()) return;
+    if (!config.reservationEndpoint) {
+      displayError('Online reservation requests are not connected yet. Please call 347-601-8884 to arrange your experience.');
+      return;
+    }
+    let endpoint;
+    try { endpoint = new URL(config.reservationEndpoint); if(endpoint.protocol !== 'https:') throw new Error(); }
+    catch { displayError('Online reservations are temporarily unavailable. Please call 347-601-8884.'); return; }
+    const payload = {
+      event:'juanita.reservation.requested',schema_version:1,
+      ...Object.fromEntries(new FormData(form)),
+      style_personality:quizResult?.title || '',
+      recommended_experience:quizResult?.service || '',
+      quiz_color:answers[0] || '',quiz_accent:answers[1] || '',quiz_shopping_preference:answers[2] || '',
+      source:'boutique_navbar',page_url:location.href,submitted_at:new Date().toISOString()
+    };
+    sending=true; status.hidden=true;
+    const submit = form.querySelector('[type=submit]');
+    submit.disabled=true; submit.textContent='Sending your request…';
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 20000);
+    try {
+      const response = await fetch(endpoint.href, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),signal:controller.signal,credentials:'omit'});
+      if (!response.ok) throw new Error('Request rejected');
+      form.hidden=true; success.hidden=false; success.setAttribute('tabindex','-1');success.focus();
+      form.reset(); step=0; answers=[]; quizResult=null;
+    } catch {
+      displayError('We could not confirm your request was received. Your details are still here. Please call 347-601-8884 before trying again.');
+    } finally {
+      clearTimeout(timer);sending=false;submit.disabled=false;submit.textContent='Submit VIP Reservation Request →';
+    }
+  });
+})();
+</script>

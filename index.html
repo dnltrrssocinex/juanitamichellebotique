@@ -1,5 +1,6 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Juanita Michelle Boutique</title><style>body{margin:0}</style></head><body><!-- JUANITA MICHELLE: NAVBAR + STYLE QUIZ + RESERVATION FORM ONLY.
 Domain update: 2026-10-20. Home and section links use juanitamichelleboutique.com.
+Cart fix: 2026-10-20. Native cart drawer covers the navbar. Navbar scrolls with the full cart page.
 Replace the previous standalone navbar block with ALL of this code.
 Install the same navbar on the homepage and shop page for section navigation.
 Set reservationEndpoint only after connecting and testing your GHL automation.
@@ -29,7 +30,10 @@ body:has(#jm-nav-widget) #jm-site-root header,body:has(#jm-nav-widget) #jm-site-
 #jm-nav-widget button{cursor:pointer}
 #jm-nav-widget a{text-decoration:none;color:inherit}
 #jm-nav-widget button:focus-visible,#jm-nav-widget a:focus-visible,#jm-nav-widget input:focus-visible,#jm-nav-widget select:focus-visible,#jm-nav-widget textarea:focus-visible{outline:3px solid #e58fb0;outline-offset:3px}
-#jm-nav-widget .jmn-header{position:fixed;top:0;left:0;right:0;width:100%;z-index:9999;background:#111;color:#f7f1e7;box-shadow:0 1px 0 #ffffff1a}
+#jm-nav-widget .jmn-header{position:fixed;top:0;left:0;right:0;width:100%;z-index:100;background:#111;color:#f7f1e7;box-shadow:0 1px 0 #ffffff1a}
+/* GHL's native cart overlay (200) and drawer (9999) must cover this header. */
+/* The full cart scrolls normally, including its header, to keep every row and subtotal unobstructed. */
+body:has(.c-store-cart) #jm-nav-widget .jmn-header{position:absolute}
 #jm-nav-widget .jmn-top{max-width:1280px;margin:auto;min-height:92px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px 32px}
 #jm-nav-widget .jmn-brand{display:flex;flex-direction:column;flex-shrink:0}
 #jm-nav-widget .jmn-brand>span{font:32px/1.1 'Great Vibes',cursive;color:#d4af37}

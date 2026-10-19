@@ -1,0 +1,7 @@
+<!-- CART OVERLAP FIX: paste AFTER the existing navbar code on GHL store pages. -->
+<style>
+/* Keep GHL's cart drawer and dimmed overlay above the navbar. */
+#jm-nav-widget .jmn-header { z-index: 100 !important; }
+/* On the full cart page, scroll the navbar with the page so it cannot cover cart rows or subtotal. */
+body:has(.c-store-cart) #jm-nav-widget .jmn-header { position: absolute !important; }
+</style>

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "bracelet-01",
+    "name": "Bracelet",
+    "category": "jewelry",
+    "price": 25,
+    "description": "An embellished bracelet featuring a rectangular crystal frame. The gold version has slightly different features from silver.",
+    "stylingTip": "For bridal wear or an evening look with a soft touch.",
+    "image": "https://raw.githubusercontent.com/dnltrrssocinex/juanitamichellebotique/main/bracelet-20261020.png",
+    "badge": ""
+  },
+  {
+    "id": "vintage-barrette-clip-01",
+    "name": "Vintage Barrette Clip",
+    "category": "vintage barrettes",
+    "price": 15,
+    "description": "Burgundy leather CC vintage hair clip barrettes.",
+    "stylingTip": "",
+    "image": "https://raw.githubusercontent.com/dnltrrssocinex/juanitamichellebotique/main/vintage-barrette-clip-20261020.png",
+    "badge": ""
+  },
+  {
+    "id": "bobby-pins-01",
+    "name": "Bobby-pins",
+    "category": "accessories",
+    "price": 15,
+    "description": "CC bobby pins in white and black.",
+    "stylingTip": "",
+    "image": "https://raw.githubusercontent.com/dnltrrssocinex/juanitamichellebotique/main/bobby-pins-20261020.png",
+    "badge": ""
+  }
+]

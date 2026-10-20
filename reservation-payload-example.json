@@ -1,0 +1,16 @@
+{
+  "event": "juanita.reservation.requested",
+  "schema_version": 1,
+  "first_name": "Example",
+  "last_name": "Customer",
+  "email": "example@example.com",
+  "phone": "+12155550100",
+  "experience_type": "Custom Hat Bar Workshop",
+  "notes": "Example only: looking for finishing touches for an occasion.",
+  "source": "boutique_navbar",
+  "page_url": "https://juanitamichelleboutique.com/homepage",
+  "submitted_at": "2026-10-19T00:00:00Z",
+  "message": "Example only: looking for finishing touches for an occasion.",
+  "is_test": false,
+  "request_id": "00000000-0000-4000-8000-000000000000"
+}

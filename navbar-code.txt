@@ -3,7 +3,7 @@ Domain update: 2026-10-20. Home and section links use juanitamichelleboutique.co
 Cart fix: 2026-10-20. Native cart drawer covers the navbar. Navbar scrolls with the full cart page.
 Replace the previous standalone navbar block with ALL of this code.
 Install the same navbar on the homepage and shop page for section navigation.
-Set reservationEndpoint only after connecting and testing your GHL automation.
+Experience reservation submissions POST to the configured GHL inbound webhook.
 The endpoint must accept browser JSON POST requests and return a successful HTTP status.
 Never put a private API key into this public code.
 If using GHL native sections, update the selectors below to their actual section IDs.
@@ -11,7 +11,7 @@ If using GHL native sections, update the selectors below to their actual section
 <script type="application/json" id="jm-navbar-settings">{
   "homeUrl": "https://juanitamichelleboutique.com/homepage",
   "shopUrl": "https://juanitamichelleboutique.com/products-list",
-  "reservationEndpoint": "",
+  "reservationEndpoint": "https://services.leadconnectorhq.com/hooks/8WGWHKn5AASKvWsn4aH1/webhook-trigger/2wxnq3Ze5zIXncb3XMoq",
   "sections": {
     "experiences": "#experiences",
     "about": "#about",
@@ -320,9 +320,11 @@ body:has(.c-store-cart) #jm-nav-widget .jmn-header{position:absolute}
     let endpoint;
     try { endpoint = new URL(config.reservationEndpoint); if(endpoint.protocol !== 'https:') throw new Error(); }
     catch { displayError('Online reservations are temporarily unavailable. Please call 347-601-8884.'); return; }
+    const fields = Object.fromEntries(new FormData(form));
     const payload = {
       event:'juanita.reservation.requested',schema_version:1,
-      ...Object.fromEntries(new FormData(form)),
+      ...fields,message:fields.notes,
+      is_test:false,request_id:crypto.randomUUID(),
       source:'boutique_navbar',page_url:location.href,submitted_at:new Date().toISOString()
     };
     sending=true; status.hidden=true;
